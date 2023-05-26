@@ -16,13 +16,9 @@
 
         <p>
           Hello !
-          Je suis Cassandre, une Développeuse Front créative récemment reconvertie :)
-          Auparavant Designer graphique et Illustratrice, j’aime donner vie à de beaux projets et les rendre uniques en
-          combinant mes compétences en développement web et en design graphique.
-
-          Durant mon temps libre, j’élève des geckos à crête, je dessine et je collectionne des plantes 🌱 J’aime aussi
-          partir
-          à l’aventure avec mon chien 🐾
+          Je suis Cassandre, une Designer Graphique, Développeuse Front créative et Illustratrice :)
+          J’aime donner vie à de beaux projets et les rendre uniques en combinant mes compétences en développement et en design.
+          Durant mon temps libre, j’élève des geckos à crête, je dessine et je collectionne des plantes 🌱 J’aime aussi partir à l’aventure avec mon chien 🐾
         </p>
       </div>
 

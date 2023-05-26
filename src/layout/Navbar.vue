@@ -1,22 +1,48 @@
 <script>
+export default {
+    data() {
+        return {
+            view: {
+                topOfPage: true
+            }
+        }
+    },
+    beforeMount() {
+        window.addEventListener('scroll', this.handleScroll)
+    },
+    methods: {
+        handleScroll() {
+            if (window.pageYOffset > 0) {
+                if (this.view.topOfPage) this.view.topOfPage = false
+            } else {
+                if (!this.view.topOfPage) this.view.topOfPage = true
+            }
+        }
+    }
+}
+
+
+
 </script>
 
 <template>
     <div class="container">
-        <h1>C</h1>
+        <nav :class="{ 'onScroll': !view.topOfPage }">
+            <h1>C</h1>
 
-        <div class="menu">
-            <ul>
-                <li><router-link to="/">Accueil</router-link></li>
-                <li><router-link to="/projets">Projets</router-link></li>
-                <li><router-link to="/a-propos">À propos</router-link></li>
-                <li><router-link to="/contact">Contact</router-link></li>
-            </ul>
-        </div>
-        <div class="burger">
-            <!-- <font-awesome-icon icon="fa-solid fa-user-secret" /> -->
-            <font-awesome-icon icon="fa-solid fa-bars" size="2xl" style="color: #837c69;" />
-        </div>
+            <div class="menu">
+                <ul>
+                    <li><router-link to="/">Accueil</router-link></li>
+                    <li><router-link to="/projets">Projets</router-link></li>
+                    <li><router-link to="/a-propos">À propos</router-link></li>
+                    <li><router-link to="/contact">Contact</router-link></li>
+                </ul>
+            </div>
+            <div class="burger">
+                <!-- <font-awesome-icon icon="fa-solid fa-user-secret" /> -->
+                <font-awesome-icon icon="fa-solid fa-bars" size="2xl" style="color: #837c69;" />
+            </div>
+        </nav>
     </div>
 </template>
 
@@ -27,12 +53,14 @@ h1 {
     color: #C07156;
 }
 
-.container {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5rem;
+    padding: 0rem 5rem;
     position: fixed;
+    left: 0;
+    top: 0;
     width: 100vw;
 }
 
@@ -52,6 +80,7 @@ a {
 a:hover {
     text-decoration: none;
     color: #D6A17F;
+    transition: 0.5s;
 }
 
 a.router-link-active {
@@ -69,9 +98,16 @@ a.router-link-active {
         cursor: pointer;
         padding: 0.5rem;
     }
-    .menu{
+
+    .menu {
         display: none;
     }
 
+}
+
+nav.onScroll {
+    box-shadow: 0 0 5px #8e8e8e;
+    background-color: rgba(255, 255, 255, 0.95);
+    /* transition: 0.3s; */
 }
 </style>
